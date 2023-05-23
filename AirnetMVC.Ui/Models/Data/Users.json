@@ -1,0 +1,79 @@
+[
+  {
+    "Username": "vinosiva",
+    "Email": "vinosiva.2001@gmail.com",
+    "Password": "password",
+    "MobileNumber": "(916) 543-6383",
+    "UserRole": "Admin"
+  },
+  {
+    "Username": "Moreno",
+    "Email": "morenoclark@entroflex.com",
+    "Password": "Rodgers",
+    "MobileNumber": "(916) 543-2301",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Pruitt",
+    "Email": "pruittrodgers@entroflex.com",
+    "Password": "Sandoval",
+    "MobileNumber": "(860) 440-2365",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Mcintyre",
+    "Email": "mcintyresandoval@entroflex.com",
+    "Password": "Aguirre",
+    "MobileNumber": "(915) 455-3094",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Guy",
+    "Email": "guyaguirre@entroflex.com",
+    "Password": "Molina",
+    "MobileNumber": "(899) 435-3875",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Winifred",
+    "Email": "winifredmolina@entroflex.com",
+    "Password": "Foreman",
+    "MobileNumber": "(888) 428-2198",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Chapman",
+    "Email": "chapmanforeman@entroflex.com",
+    "Password": "Barton",
+    "MobileNumber": "(933) 450-2483",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Phillips",
+    "Email": "phillipsbarton@entroflex.com",
+    "Password": "Ford",
+    "MobileNumber": "(937) 596-2258",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Stanton",
+    "Email": "stantonford@entroflex.com",
+    "Password": "Levine",
+    "MobileNumber": "(833) 506-3816",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Cara",
+    "Email": "caralevine@entroflex.com",
+    "Password": "Leblanc",
+    "MobileNumber": "(976) 435-3228",
+    "UserRole": "Member"
+  },
+  {
+    "Username": "Hazel",
+    "Email": "hazelleblanc@entroflex.com",
+    "Password": "Mckay",
+    "MobileNumber": "(884) 423-3683",
+    "UserRole": "Member"
+  }
+]

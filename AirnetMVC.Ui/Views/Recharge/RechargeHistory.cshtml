@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AirnetMVC.DataService.Recharge>
+
+@{
+    ViewBag.Title = "ViewRecharges";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<h2 class="text-center">Your History of Recharges</h2>
+<table class="table text-center">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Plans.PlanPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plans.PlanName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plans.PlanValidity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plans.Data)
+        </th>
+        <th>
+            Recipient Name
+        </th>
+        <th>
+            Recipient Mobile No
+        </th>
+        <th>
+            Recipient Email
+        </th>
+        <th>
+           Time of Recharge
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        ₹ @Html.DisplayFor(modelItem => item.Plans.PlanPrice)
+    </td>
+    <th>
+        @Html.DisplayFor(model => item.Plans.PlanName)
+    </th>
+    <th>
+        @Html.DisplayFor(model => item.Plans.PlanValidity) days
+    </th>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plans.Data)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Mobile)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RechargeTime)
+    </td>
+</tr>
+}
+
+</table>

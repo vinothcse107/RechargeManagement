@@ -1,0 +1,88 @@
+﻿@model AirnetMVC.Ui.Models.UserDTO
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AirNet Recharge</h2>
+<h6>Fast and Secure way to recharge!</h6>
+
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h4 class="text-center">Log In to Your Airnet Account!</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<div class="row">
+    <div class="col-lg-6 col-sm-12 text-center">
+        <img src="~/Content/images/Login.png" class="img-fluid" style="height:460px"/>
+    </div>
+    <div class="col-lg-6">
+        <div class="mt-lg-5 offset-1 div-md-center div-sm-center">
+            <span id="err" class=" text-danger"></span>
+            <div class="form-floating mb-3">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control border-0 shadow-none border-bottom", @id = "username", @placeholder = "Username", @required = "true" } })
+                @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label", @for = "username" })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger", @for = "username" })
+
+            </div><br>
+            <div class="form-floating mb-3">
+                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control border-0 shadow-none border-bottom", @id = "password", @placeholder = "password", @type = "password", @required = "true" } })
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label", @id = "password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", @for = "password" })
+            </div>
+
+            <br>
+
+            <div class="offset-2">
+                <input type="submit" value="Login" class="btn text-white me-3" style="background-color: #a435f0" onclick="Login()">
+                @Html.ActionLink("Signup", "Signup", "", htmlAttributes: new { @class = "btn text-white", @style= "background-color: #a435f0" })
+            </div>
+        </div>
+    </div>
+</div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<!--
+    
+    
+    
+ -->
+<script>
+        var status = null;
+
+        function Login(event)
+        {
+            var data = $("#form").serialize();
+            $.ajax({
+                type: 'POST',
+                url: '/Users/Login',
+                data:data,
+                dataType: 'JSON',
+                success: function (data) {
+                    status = data.status;
+
+                    if (status == 1) {
+                        window.location.href = '@Url.Action("ViewPrepaidPlans", "Plan")';
+                    } else if (status == 2) {
+                        window.location.href = '@Url.Action("ViewPrepaidPlans", "Client")';
+                    } else if (status == 3) {
+                        window.location.href = '@Url.Action("Login", "Users")';
+                        alert("Username or Password not found!!!");
+@*                        $('#err').hide().html("Username or Password Do not Match!!!").fadeIn('slow');*@
+                    }
+                }
+
+            })
+
+        }
+
+</script>
+}
+

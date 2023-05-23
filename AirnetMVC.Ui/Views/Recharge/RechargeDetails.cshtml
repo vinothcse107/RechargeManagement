@@ -1,0 +1,67 @@
+﻿@model AirnetMVC.DataService.Recharge
+
+@{
+    ViewBag.Title = "RechargeDetails";
+    Layout = "~/Views/Shared/_ClientLayout.cshtml";
+}
+
+<h2>RechargeDetails</h2>
+
+<div>
+    <h4>Recharge</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Plans.PlanType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plans.PlanType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.User.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RechargeTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RechargeTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RechargeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

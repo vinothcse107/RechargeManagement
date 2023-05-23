@@ -1,0 +1,83 @@
+﻿@model AirnetMVC.DataService.Plan
+
+@{
+    IEnumerable<String> opts = new String[] { "Postpaid","Prepaid","Addon" };
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.PlanId)
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.PlanType, htmlAttributes: new { @class = "control-label" })
+        <div class="d-grid ms-4">
+            @Html.DropDownListFor(model => model.PlanType, new SelectList(opts), "Select Plan", new { htmlAttributes = new { @class = "form-select", @required="true" } })
+            @Html.ValidationMessageFor(model => model.PlanType, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.PlanName, htmlAttributes: new { @class = "control-label" })
+        <div class="ms-4">
+            @Html.EditorFor(model => model.PlanName, new { htmlAttributes = new { @class = "form-control text-center", @required = "true" } })
+            @Html.ValidationMessageFor(model => model.PlanName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.Data, htmlAttributes: new { @class = "control-label" })
+        <div class="ms-4">
+            @Html.EditorFor(model => model.Data, new { htmlAttributes = new { @class = "form-control text-center", @required = "true" } })
+            @Html.ValidationMessageFor(model => model.Data, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.PlanValidity, htmlAttributes: new { @class = "control-label" })
+        <div class="ms-4">
+            @Html.EditorFor(model => model.PlanValidity, new { htmlAttributes = new { @class = "form-control text-center", @max="365", @required = "true" } })
+            @Html.ValidationMessageFor(model => model.PlanValidity, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.PlanDetails, htmlAttributes: new { @class = "control-label" })
+        <div class="ms-4">
+            @Html.EditorFor(model => model.PlanDetails, new { htmlAttributes = new { @class = "form-control text-center", @required = "true" } })
+            @Html.ValidationMessageFor(model => model.PlanDetails, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.PlanPrice, htmlAttributes: new { @class = "control-label" })
+        <div class="ms-4">
+            @Html.EditorFor(model => model.PlanPrice, new { htmlAttributes = new { @class = "form-control text-center", @required = "true" } })
+            @Html.ValidationMessageFor(model => model.PlanPrice, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  my-3 text-center me-4 lead">
+        @Html.LabelFor(model => model.PlanOffers, htmlAttributes: new { @class = "control-label" })
+        <div class="ms-4">
+            @Html.EditorFor(model => model.PlanOffers, new { htmlAttributes = new { @class = "form-control text-center", @required = "true" } })
+            @Html.ValidationMessageFor(model => model.PlanOffers, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group ">
+        <div class="offset-4">
+            <input type="submit" value="Save" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,18 @@
+﻿@model AirnetMVC.DataService.Plan
+
+
+<div>
+    <h5 class="text-center me-4 lead">Plan Details</h5>
+    @Model.PlanDetails
+    
+    <h5 class="text-center me-4 lead mt-4">Plan Offers</h5>
+    @Model.PlanOffers
+
+    <h5 class="text-center me-4 lead mt-4">OverAllRating</h5>
+    @ViewBag.OverAllRating
+</div>
+
+<h5 class="text-center me-4 lead mt-4">Reviews</h5>
+<div>
+    @Html.Action("ReviewsPartialView", "Review", Model.PlanId)
+</div>
